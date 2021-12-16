@@ -1,79 +1,41 @@
-import Head from 'next/head';
 import Link from 'next/link'
-
-export default function Home() {
+export default function Prerendering() {
   return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <><main>
+          <p className="description">
 
-      <main>
-        <p className="description">
-        
-          <img src="/images/profile.jpg"  height={144} // Desired size with correct aspect ratio
-          width={144} // Desired size with correct aspect ratio
-          
-          alt="Your Name" />
-           <h1><strong>Shu Uesugi</strong> </h1>
-          
-        </p>
-       
-         <div className="app">
-        
-        <p>Hello, i'm <strong>Shu</strong>. i'm a software engineer and a translator (English/Japaness). 
-        you can contact me on <span>
-        
-         <a href="https://twitter.com"
-          
-        >
-          Twitter
+              <img src="/images/profile.jpg" height={144} 
+                  width={144} 
 
+                  alt="Suraj" />
+              <h4><strong>Shu Uesugi</strong> </h4>
+              <div className="detail">
+               
+               <p><h2><strong>Two Forms of Pre-rendering</strong><br/><span className="first-date">January 1, 2021</span></h2></p>
+               <p>Next.js has two forms of pre-rending:<strong>Static Generation and Server-Side Rendering</strong>
+               .The difference is in <strong>when</strong> it generates the HTML for pages.
+               </p>
+               <p><ul>
+               <li> <strong>Static Generation</strong> is the pre-rendering method that generate the HTML at <strong>build time</strong> . The pre-rendered HTML is then reused on each request</li>
+               <li> <strong>Server-side Rendering</strong> is the pre-rendering method that generate HTML on  <strong> each request</strong></li>
+               </ul>
+               </p>
+               <p>importantly,Nextjs let you <strong>choose</strong> which pre-rendering form to use or each page. You can a create "hybrid" Next.js app by using static generation for most pages and using server-side rendering for others</p>
+              <p>
+              <Link href="/">
 
-        </a>
-        </span>
-        </p>
-        <p>
-         ( This is a sample website- you'll be building a site like this in <br/><span>
-          <a href="https://nextjs.org/learn/basics/create-nextjs-app">
-          our Nextjs tutorial.
-
-        
-        </a>
-        
-         )
-         </span>
-        </p>
-        <h3><strong>Blog</strong></h3>
-        <p>
-          <Link href="/posts/first-post">
-
-          <a>When to use Static Generation v.s Server Side Rendering</a></Link><br/>
-          <span className="date">January 1, 2021</span></p>
-       
-       
-         <p>
-         <Link href="/posts/pre-rendering">
-           <a>Two Forms of Pre-rendering</a>
-             </Link><br/><span className="date">January 1, 2021</span></p>
+                  <a>&larr;Back to home</a>
+              </Link>
+              </p>
+               </div>
+               
+          </p>
          
-       
-    </div>
+            <p>
+              
+              </p>
           
-            
-           
-         
-
-         
-          
-        
-      </main>
-
-     
-
-      <style jsx>{`
-        .container {
+      </main><style jsx>{`.container {
           min-height: 100vh;
           padding: 0 0.5rem;
           display: flex;
@@ -93,8 +55,25 @@ export default function Home() {
 
         
 
-        
-
+        .detail p{
+          
+          font-size:5px;
+          font-wight: 500;
+          padding-left:300px;
+          padding-right: 300px;
+          text-align: justify;
+    
+          
+        }
+        .detail p h2{
+            font-size:2.2rem;
+            font-weight:900;
+            color:black
+        }
+        .detail p h2 .first-date{
+            font-weight:100;
+            font-size:1.5rem;
+        }
         
 
         a {
@@ -139,14 +118,14 @@ export default function Home() {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 
         }
-        .app p{
+        .detail p{
           
           font-size: 1.5rem;
           font-wight: 500;
           padding-left:300px;
           padding-right: 300px;
         }
-        .app h3{
+        .detail h3{
            padding-left:300px;
           padding-right: 300px;
           font-size: 2rem
@@ -222,7 +201,15 @@ export default function Home() {
         * {
           box-sizing: border-box;
         }
-      `}</style>
-    </div>
+
+          
+        
+        }
+          
+      
+      `}</style></>
+     
+
+    
   )
 }
